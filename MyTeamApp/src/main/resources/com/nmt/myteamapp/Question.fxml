@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<ScrollPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nmt.myteamapp.QuestionController">
+   <content>
+      <VBox minWidth="-Infinity" styleClass="Main" stylesheets="@style.css">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subject" text=" Quản lý câu hỏi" />
+            <HBox prefHeight="0.0" prefWidth="514.0" styleClass="Main">
+               <children>
+                  <TextField fx:id="txtQuestion" prefHeight="0.0" prefWidth="159.0" promptText="Nội dung câu hỏi..." />
+               </children>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="514.0" styleClass="Main">
+               <children>
+                  <ComboBox fx:id="cbCates" prefWidth="150.0" promptText="Danh mục" />
+               </children>
+            </HBox>
+            <VBox prefHeight="159.0" prefWidth="514.0" styleClass="Main">
+               <children>
+                  <HBox prefHeight="0.0" prefWidth="494.0" styleClass="Main">
+                     <children>
+                        <RadioButton fx:id="rdoA" mnemonicParsing="false">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleChoice" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <TextField fx:id="txtA" prefHeight="0.0" prefWidth="159.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="5.0" prefWidth="494.0" styleClass="Main">
+                     <children>
+                        <RadioButton fx:id="rdoB" mnemonicParsing="false" toggleGroup="$toggleChoice" />
+                        <TextField fx:id="txtB" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="600.0" styleClass="Main">
+                     <children>
+                        <RadioButton fx:id="rdoC" mnemonicParsing="false" toggleGroup="$toggleChoice" />
+                        <TextField fx:id="txtC" prefHeight="0.0" prefWidth="159.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="494.0" styleClass="Main">
+                     <children>
+                        <RadioButton fx:id="rdoD" mnemonicParsing="false" toggleGroup="$toggleChoice" />
+                        <TextField fx:id="txtD" prefHeight="0.0" prefWidth="159.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="15.0" prefWidth="514.0" styleClass="Main">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addQuestion" prefHeight="0.0" styleClass="Button" text="Add question" />
+               </children>
+            </HBox>
+            <TableView fx:id="tbQuestion" prefHeight="84.0" prefWidth="514.0" />
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

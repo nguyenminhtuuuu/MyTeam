@@ -1,0 +1,40 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 18, 2025, 4:48:24 PM
+    Author     : DELL
+*/
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 18, 2025, 4:42:12 PM
+    Author     : DELL
+*/
+
+.Main{
+    -fx-background-color: #FFFDB1;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-alignment: CENTER;
+    -fx-spacing: 10;
+}
+.subject{
+    -fx-font-size: 40;
+    -fx-font-weight: bold;
+    -fx-fill: #EC870E;
+    -fx-stroke: #DB6B09;
+    -fx-stroke-width: 3;
+    
+}
+.Button{
+    -fx-background-color: #F09642;
+    -fx-text-fill: white;
+    -fx-pref-width:200;
+    -fx-padding:5;
+    -fx-font-size:16;
+}
+
