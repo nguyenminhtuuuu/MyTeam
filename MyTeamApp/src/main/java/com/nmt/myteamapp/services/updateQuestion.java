@@ -7,6 +7,7 @@ package com.nmt.myteamapp.services;
 import com.nmt.myteamapp.pojo.Category;
 import com.nmt.myteamapp.pojo.Choice;
 import com.nmt.myteamapp.pojo.Question;
+import static com.nmt.myteamapp.services.updateQuestion.getChoiceByQuestion;
 import com.nmt.myteamapp.utils.JdbcConnector;
 import com.nmt.myteamapp.utils.MyAlert;
 import java.sql.Connection;
@@ -58,6 +59,47 @@ public class updateQuestion {
             q.setChoices(choices);
             questions.add(q);
         }
+        return questions;
+        
+    }
+    public static List<Question> getQuestion(int categoryId, int num) throws SQLException{
+        Connection conn = JdbcConnector.getInstance().connect();
+        String sql = "SELECT * FROM question WHERE category_id=? LIMIT ?";
+        PreparedStatement stm = conn.prepareCall(sql);
+        stm.setInt(1, categoryId);
+        stm.setInt(2, num);
+        ResultSet rs = stm.executeQuery();
+        List<Question> questions = new ArrayList<>();
+       
+            while (rs.next()) {
+                Question.Builder b = new Question.Builder(rs.getString("id"),
+                         rs.getString("content"), rs.getInt("category_id"));
+                Question q = b.build();
+                List<Choice> choices = getChoiceByQuestion(q.getQuestionId());
+                q.setChoices(choices);
+                questions.add(q);
+            }
+        
+        return questions;
+        
+    }
+    public static List<Question> getQuestion(int num) throws SQLException{
+        Connection conn = JdbcConnector.getInstance().connect();
+        String sql = "SELECT * FROM question LIMIT ?";
+        PreparedStatement stm = conn.prepareCall(sql);
+        stm.setInt(1, num);
+        ResultSet rs = stm.executeQuery();
+        List<Question> questions = new ArrayList<>();
+       
+            while (rs.next()) {
+                Question.Builder b = new Question.Builder(rs.getString("id"),
+                         rs.getString("content"), rs.getInt("category_id"));
+                Question q = b.build();
+                List<Choice> choices = getChoiceByQuestion(q.getQuestionId());
+                q.setChoices(choices);
+                questions.add(q);
+            }
+        
         return questions;
         
     }

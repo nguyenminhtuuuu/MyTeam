@@ -8,11 +8,11 @@
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="Main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nmt.myteamapp.PrimaryController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subject" text=" My Team App" />
-      <Button mnemonicParsing="false" styleClass="Button" text="Đăng ký" />
-      <Button mnemonicParsing="false" styleClass="Button" text="Đăng nhập" />
+      <Button mnemonicParsing="false" onAction="#handleRegister" styleClass="Button" text="Đăng ký" />
+      <Button mnemonicParsing="false" onAction="#handleLogin" styleClass="Button" text="Đăng nhập" />
       <Button mnemonicParsing="false" onAction="#handleQuestion" styleClass="Button" text="Quản lý câu hỏi" />
       <Button mnemonicParsing="false" styleClass="Button" text="Luyện tập" />
-      <Button mnemonicParsing="false" styleClass="Button" text="Thi" />
+      <Button mnemonicParsing="false" onAction="#handleExam" styleClass="Button" text="Thi" />
       <ComboBox fx:id="cbTheme" onAction="#handleTheme" prefWidth="150.0" styleClass="Button" />
    </children>
 </VBox>

@@ -25,3 +25,29 @@ public abstract class BaseServices<T> {
         return this.getResults(stm.executeQuery());             
     }
 }
+
+//Truy vấn dữ liệu từ database theo đối tượng
+//pub abstr class BaseServices<T> {
+//    pub abs PreparedStatement getStm(Connection conn) throws ...;
+//    pub abs List<T>getResults(ResultSet rs) throws...;
+//  
+//    pub List<T> list() throws...{
+//        Connection conn = JdbcConnector.getInstance().connect();
+//        PreparedStatement stm = this.getStm(conn);
+//        return this.getResults(stm.executeQuery());             
+//    }
+//}
+
+//pub class CategoryServices extends BaseServices<Category>{
+//    @ PreparedStatement{return conn.prepareCall("SELECT * FROM category");}
+
+//    @ getResults(ResultSet rs) {
+//        List<Category> cates = new ArrayList<>();
+//        while(rs.next()){
+//            Category c = new Category(rs.getInt("id"), rs.getString("name"));
+//            cates.add(c);
+//        }
+//        return cates;
+//    } 
+//}
+

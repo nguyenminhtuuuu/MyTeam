@@ -22,7 +22,6 @@ public class CategoryServices extends BaseServices<Category>{
     public PreparedStatement getStm(Connection conn) throws SQLException {
         return conn.prepareCall("SELECT * FROM category");
     }
-
     @Override
     public List<Category> getResults(ResultSet rs) throws SQLException {
         List<Category> cates = new ArrayList<>();
@@ -31,6 +30,7 @@ public class CategoryServices extends BaseServices<Category>{
             cates.add(c);
         }
         return cates;
-    }
-    
+    } 
 }
+
+

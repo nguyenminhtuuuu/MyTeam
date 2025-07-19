@@ -8,8 +8,10 @@ import com.nmt.myteamapp.pojo.Category;
 import com.nmt.myteamapp.pojo.Choice;
 import com.nmt.myteamapp.pojo.Question;
 import com.nmt.myteamapp.services.CategoryServices;
+import com.nmt.myteamapp.services.FlyweightFactory;
 import com.nmt.myteamapp.services.updateQuestion;
 import com.nmt.myteamapp.utils.MyAlert;
+import com.nmt.myteamapp.utils.theme.theme;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -61,7 +63,9 @@ public class QuestionController implements Initializable {
             //nap cau hoi len tableview
             this.loadQuestion();
             //nap category len
-            this.cbCates.getItems().addAll(new CategoryServices().list());
+            //this.cbCates.getItems().addAll(new CategoryServices().list());
+            this.cbCates.setItems(FXCollections
+                    .observableArrayList(FlyweightFactory.getData(new CategoryServices(), "categories")));
             //tim kiem
             this.txtQuestion.textProperty().addListener((e) -> {
                 try {
@@ -159,3 +163,4 @@ public class QuestionController implements Initializable {
         
     }
 }
+

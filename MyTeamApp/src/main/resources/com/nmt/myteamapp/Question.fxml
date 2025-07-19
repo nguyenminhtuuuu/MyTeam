@@ -11,10 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<ScrollPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nmt.myteamapp.QuestionController">
+<ScrollPane styleClass="Main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nmt.myteamapp.QuestionController">
    <content>
-      <VBox minWidth="-Infinity" styleClass="Main" stylesheets="@style.css">
+      <VBox minWidth="-Infinity" styleClass="Main">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subject" text=" Quản lý câu hỏi" />
             <HBox prefHeight="0.0" prefWidth="514.0" styleClass="Main">
